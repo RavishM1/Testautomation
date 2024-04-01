@@ -1,0 +1,52 @@
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
+
+public class chromeform {
+
+	public static void main(String[] args) throws InterruptedException, Exception {
+
+		System.setProperty("Webdriver.Chrome.Driver", "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+		WebDriver admin=new ChromeDriver();
+		admin.get("https://stagingadmin.ezycreate.com/");
+
+		admin.manage().window().maximize();
+		
+		Thread.sleep(3000);
+		admin.findElement(By.id("basic_username")).sendKeys("ravish");
+		Thread.sleep(2000);
+		admin.findElement(By.id("basic_password")).sendKeys("ravish@123");
+		Thread.sleep(2000);
+		admin.findElement(By.xpath("//form[@id='basic']/div[3]/div/div/div/button/span")).click();
+		Thread.sleep(3000);
+		admin.findElement(By.xpath("//div[@id='root']/section/aside/div/ul/li[7]/span[2]")).click();
+		Thread.sleep(2000);
+		admin.findElement(By.xpath("//div[@id='root']/section/section/main/div/div[2]/div/button/span[2]")).click();
+		
+		Thread.sleep(3000);
+		admin.findElement(By.id("templatename")).sendKeys("R_Test1");
+		Thread.sleep(2000);
+		admin.findElement(By.id("description")).sendKeys("test description please ignore.");
+		Thread.sleep(2000);
+		admin.findElement(By.id("product")).click();
+		admin.findElement(By.xpath("//div[2]/div/div/div/div[3]/div")).click();
+		Thread.sleep(2000);
+		admin.findElement(By.id("occasion")).click();
+		admin.findElement(By.xpath("/html/body/div[5]/div/div/div/div[2]/div[1]/div/div/div[6]/div")).click();		
+		Thread.sleep(2000);
+		admin.findElement(By.id("language")).click();
+		admin.findElement(By.xpath("/html/body/div[6]/div/div/div/div[2]/div[1]/div/div/div[2]/div")).click();		
+		Thread.sleep(2000);		
+		admin.findElement(By.xpath("//*[@id=\"status\"]/span")).click();			
+		admin.findElement(By.xpath("//div/div/div/div/div/div/button/span")).click();
+	}
+
+}
