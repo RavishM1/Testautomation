@@ -58,7 +58,6 @@ public class chromeform {
 		admin.findElement(By.id("language")).click();
 		admin.findElement(By.xpath("/html/body/div[6]/div/div/div/div[2]/div[1]/div/div/div[4]/div")).click();		
 		Thread.sleep(2000);	
-		
 		admin.findElement(By.xpath("//*[@id=\"status\"]/span")).click();			
 		admin.findElement(By.xpath("//div/div/div/div/div/div/button/span")).click();			
 		
